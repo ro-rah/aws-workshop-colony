@@ -39,3 +39,5 @@ source:
 spec_version: 1
 debugging: 
   connection_protocol: SSH
+ ingress:
+  enabled: false
