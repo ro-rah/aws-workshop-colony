@@ -14,7 +14,7 @@ inputs:
 
 applications:
   - mcserver:      
-      #target: vm1
+      target: vm1
       input_values:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
