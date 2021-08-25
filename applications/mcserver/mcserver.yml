@@ -32,8 +32,8 @@ source:
     - name: ubuntu
       tag: 16.04
     ami:
-      - id: ami-0a32c175566b0565d
-        region: us-west-2a
+      - id: ami-0f8a0c90d5cf92ad6
+        region: us-east-1
         username: ec2-user
   os_type: linux
 spec_version: 1
