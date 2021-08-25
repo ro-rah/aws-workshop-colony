@@ -6,9 +6,6 @@ metadata:
     
 clouds: 
   - AWS: eu-west-1
-  
-artifacts:
-  - minecraft-server: artifacts/latest/promotions-manager-ui.master.tar.gz
 
 inputs:
 - PORT: 25565
