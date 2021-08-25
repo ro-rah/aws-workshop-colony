@@ -15,4 +15,3 @@ applications:
       input_values:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
-        - RELEASE_NUMBER: $RELEASE_NUMBER
