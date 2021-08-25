@@ -4,7 +4,7 @@ metadata:
   description: |
     Minecraft server setup for my janky particular situation
 clouds:
-  - AWS: eu-west-1
+  - AWS: us-west-2a
 inputs:
   - PORT: 25565
   - AWS_INSTANCE_TYPE: m4.xlarge
