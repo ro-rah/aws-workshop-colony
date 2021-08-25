@@ -32,7 +32,7 @@ source:
     - name: ubuntu
       tag: 16.04
     ami:
-      - id: ami-05f9f04fdb3aeb80b
+      - id: ami-02c5e6c16f9fb5aa1
         region: us-east-1
         username: ec2-user
   os_type: linux
