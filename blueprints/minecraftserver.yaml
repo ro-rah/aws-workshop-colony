@@ -1,25 +1,18 @@
 spec_version: 1
 kind: blueprint
 metadata:
-  description: >
+  description: |
     Minecraft server setup for my janky particular situation
-    
-clouds: 
+clouds:
   - AWS: eu-west-1
-  
-artifacts:
-  - minecraft-server: artifacts/latest/promotions-manager-ui.master.tar.gz
-
 inputs:
-- PORT: 25565
-- AWS_INSTANCE_TYPE: m4.xlarge
-- RELEASE_NUMBER: none
-
+  - PORT: 25565
+  - AWS_INSTANCE_TYPE: m4.xlarge
+  - RELEASE_NUMBER: none
 applications:
-  - mcserver:      
-      #target: vm1
+  - mcserver:
+      target: vm1
       input_values:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - RELEASE_NUMBER: $RELEASE_NUMBER
-              
