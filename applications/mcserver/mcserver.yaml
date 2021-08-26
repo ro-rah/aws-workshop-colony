@@ -1,16 +1,16 @@
 kind: application
 inputs:
-- PORT: 3000
-- AZURE_VM_SIZE: Basic_A1
-- AWS_INSTANCE_TYPE: m4.xlarge
+  - PORT: 3000
+  - AZURE_VM_SIZE: Basic_A1
+  - AWS_INSTANCE_TYPE: m4.xlarge
 infrastructure:
   connectivity:
     external:
-    - web:
-        port: $PORT
-        path: ''
+      - web:
+          port: $PORT
+          path: ''
   compute:
-    spec:      
+    spec:
       azure:
         vm_size: $AZURE_VM_SIZE
       aws:
@@ -24,20 +24,20 @@ configuration:
     timeout: 1000
     wait_for_ports: $PORT
 source:
-  image:    
+  image:
     azure_image:
-    - urn: Canonical:UbuntuServer:16.04-LTS:latest
-      username: adminuser
+      - urn: 'Canonical:UbuntuServer:16.04-LTS:latest'
+        username: adminuser
     docker_image:
-    - name: ubuntu
-      tag: 16.04
+      - name: ubuntu
+        tag: 16.04
     ami:
       - id: ami-02c5e6c16f9fb5aa1
         region: us-east-1
         username: ec2-user
   os_type: linux
 spec_version: 1
-debugging: 
+debugging:
   connection_protocol: SSH
- ingress:
+ingress:
   enabled: false
