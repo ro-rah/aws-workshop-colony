@@ -38,6 +38,7 @@ source:
   os_type: linux
 spec_version: 1
 debugging:
+  allow_direct_access: true
   connection_protocol: SSH
 ingress:
   enabled: false
