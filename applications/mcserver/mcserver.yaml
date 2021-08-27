@@ -1,12 +1,12 @@
 kind: application
 inputs:
-  - PORT: 3000
+  - PORT: 25565
   - AZURE_VM_SIZE: Basic_A1
   - AWS_INSTANCE_TYPE: m4.xlarge
 infrastructure:
   connectivity:
     external:
-      - web:
+      - minecraft_server:
           port: $PORT
           path: ''
   compute:
