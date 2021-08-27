@@ -20,6 +20,9 @@ configuration:
     script: minecraft_server-command.sh
   initialization:
     script: minecraft_server.sh
+   healthcheck:
+    timeout: 100
+    wait_for_ports: $PORT
 source:
   image:
     azure_image:
