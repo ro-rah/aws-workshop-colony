@@ -42,3 +42,10 @@ debugging:
   connection_protocol: SSH
 ingress:
   enabled: true
+  listeners:
+    - http: 25565
+  rules:
+    - default: true
+      application: mcserver
+      port: 25565
+
