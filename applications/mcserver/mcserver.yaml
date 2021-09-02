@@ -40,10 +40,4 @@ spec_version: 1
 debugging:
   allow_direct_access: true
   connection_protocol: SSH
-ingress:
-  enabled: true
-  rules:
-    - default: true
-      application: mcserver
-      port: 25565
 
