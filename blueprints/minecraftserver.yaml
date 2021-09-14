@@ -16,8 +16,4 @@ applications:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
 ingress:
-  enabled: true
-  rules:
-    - default: true
-      application: mcserver
-      port: 25565
+  enabled: false

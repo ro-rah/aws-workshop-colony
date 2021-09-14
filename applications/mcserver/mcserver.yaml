@@ -21,7 +21,7 @@ configuration:
   initialization:
     script: minecraft_server.sh
   healthcheck:
-    timeout: 100
+    timeout: 200
     wait_for_ports: $PORT
 source:
   image:
