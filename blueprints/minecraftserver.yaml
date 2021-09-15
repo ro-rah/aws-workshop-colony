@@ -8,7 +8,7 @@ clouds:
 inputs:
   - PORT: 25565
   - AWS_INSTANCE_TYPE: m4.xlarge
-  - RELEASE_NUMBER: none
+  - ALLOWFLIGHT: true
   - GAMEMODE: creative|survival|adventure|spectator
 applications:
   - mcserver:
