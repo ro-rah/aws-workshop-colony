@@ -30,7 +30,6 @@ if [ "$ALLOWFLIGHT" == "true" ]; then
     sed 's/allow-flight=false/allow-flight=true' /server.properties
 elif [ "$ALLOWFLIGHT" == "false" ]; then
     sed 's/allow-flight=false/allow-flight=false' /server.properties
-
 else
 	echo "Value for ALLOWFLIGHT must be true or false"
 fi
