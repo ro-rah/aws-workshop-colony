@@ -18,22 +18,22 @@ echo -e '#By changing the setting below to TRUE you are indicating your agreemen
 
 echo "==> Updating gamemode, current value is $GAMEMODE"
 if [ "$GAMEMODE" == "creative" ]; then
-    sed 's/gamemode=survival/gamemode=creative/' /server.properties
+    sed -i 's/gamemode=survival/gamemode=creative/' /server.properties
 elif [ "$GAMEMODE" == "survival" ]; then
     echo "Nothing to do here."
 elif [ "$GAMEMODE" == "adventure" ]; then
-    sed 's/gamemode=survival/gamemode=adventure/' /server.properties
+    sed -i 's/gamemode=survival/gamemode=adventure/' /server.properties
 elif [ "$GAMEMODE" == "spectator" ]; then
-    sed 's/gamemode=survival/gamemode=spectator/' /server.properties
+    sed -i 's/gamemode=survival/gamemode=spectator/' /server.properties
 else
 	echo "You must state one of the following gamemodes: creative, survival, adventure, or spectator"
 fi
 
 echo "==> Updating allow-flight current value is $ALLOWFLIGHT"
 if [ "$ALLOWFLIGHT" == "true" ]; then
-    sed 's/allow-flight=false/allow-flight=true/' /server.properties
+    sed -i 's/allow-flight=false/allow-flight=true/' /server.properties
 elif [ "$ALLOWFLIGHT" == "false" ]; then
-    sed 's/allow-flight=false/allow-flight=false/' /server.properties
+    sed -i 's/allow-flight=false/allow-flight=false/' /server.properties
 else
 	echo "Value for ALLOWFLIGHT must be true or false"
 fi

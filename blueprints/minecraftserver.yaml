@@ -20,4 +20,3 @@ applications:
         - GAMEMODE: $GAMEMODE
 ingress:
   enabled: false
-  
