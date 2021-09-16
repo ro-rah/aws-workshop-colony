@@ -15,7 +15,6 @@ java -jar server.jar --initSettings --nogui
 echo -e '#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 \n#Wed Aug 25 02:30:24 UTC 2021 \neula=true' > eula.txt
 
-sleep 30
 
 echo "==> Updating gamemode, current value is $GAMEMODE"
 if [ "$GAMEMODE" == "creative" ]; then
