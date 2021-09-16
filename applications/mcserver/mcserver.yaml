@@ -41,4 +41,5 @@ spec_version: 1
 debugging:
   allow_direct_access: true
   connection_protocol: SSH
+  bastion_availability: enabled-on
 
