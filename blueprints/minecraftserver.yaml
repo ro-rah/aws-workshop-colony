@@ -20,8 +20,4 @@ applications:
         - GAMEMODE: $GAMEMODE
 ingress:
   enabled: false
-debugging:
-  bastion_availability: enabled-on
-  direct_access: on
-  connection_protocol: SSH
   
