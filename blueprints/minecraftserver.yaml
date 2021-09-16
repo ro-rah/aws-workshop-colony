@@ -17,6 +17,7 @@ applications:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - ALLOWFLIGHT: $ALLOWFLIGHT
+        - GAMEMODE: $GAMEMODE
 ingress:
   enabled: false
 debugging:

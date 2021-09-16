@@ -4,6 +4,7 @@ inputs:
   - AZURE_VM_SIZE: Basic_A1
   - AWS_INSTANCE_TYPE: m4.xlarge
   - ALLOWFLIGHT: true
+  - GAMEMODE: survival
 infrastructure:
   connectivity:
     external:
@@ -38,8 +39,4 @@ source:
         username: ec2-user
   os_type: linux
 spec_version: 1
-debugging:
-  allow_direct_access: true
-  connection_protocol: SSH
-  bastion_availability: enabled-on
 
