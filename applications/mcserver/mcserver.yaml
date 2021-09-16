@@ -3,6 +3,7 @@ inputs:
   - PORT: 25565
   - AZURE_VM_SIZE: Basic_A1
   - AWS_INSTANCE_TYPE: m4.xlarge
+  - ALLOWFLIGHT: true
 infrastructure:
   connectivity:
     external:
