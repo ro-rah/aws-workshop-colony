@@ -12,7 +12,7 @@ curl https://launcher.mojang.com/v1/objects/c5f6fb23c3876461d46ec380421e42b28978
 echo -e '#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 \n#Wed Aug 25 02:30:24 UTC 2021 \neula=true' > eula.txt
 
-echo '==> Updating gamemode'
+echo '==> Updating gamemode, current value is $GAMEMODE'
 if [ "$GAMEMODE" == "creative" ]; then
     sed 's/gamemode=survival/gamemode=creative' /server.properties
 elif [ "$GAMEMODE" == "survival" ]; then
@@ -25,11 +25,13 @@ else
 	echo "You must state one of the following gamemodes: creative, survival, adventure, or spectator"
 fi
 
-echo '==> Updating allow-flight'
+echo '==> Updating allow-flight current value is $ALLOWFLIGHT'
 if [ "$ALLOWFLIGHT" == "true" ]; then
-    sed 's/allow-flight=false/allow-flight=true' /server.properties
+    #sed 's/allow-flight=false/allow-flight=true' /server.properties
+	echo "true path executed"
 elif [ "$ALLOWFLIGHT" == "false" ]; then
-    sed 's/allow-flight=false/allow-flight=false' /server.properties
+    #sed 's/allow-flight=false/allow-flight=false' /server.properties
+	echo "false path executed"
 else
 	echo "Value for ALLOWFLIGHT must be true or false"
 fi
