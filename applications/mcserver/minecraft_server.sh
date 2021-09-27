@@ -4,6 +4,10 @@ echo '=============== Staring init script for Promotions Manager UI ============
 # save all env for debugging
 printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 
+echo '==> Create Minecraft server Install directory'
+mkdir /opt/minecraft
+cd /opt/minecraft
+
 echo '==> Download Minecraft server version 1.16.2'
 yum update
 yum install curl -y
@@ -18,22 +22,22 @@ echo -e '#By changing the setting below to TRUE you are indicating your agreemen
 
 echo "==> Updating gamemode, current value is $GAMEMODE"
 if [ "$GAMEMODE" == "creative" ]; then
-    sed -i 's/gamemode=survival/gamemode=creative/' /server.properties
+    sed -i 's/gamemode=survival/gamemode=creative/' ./server.properties
 elif [ "$GAMEMODE" == "survival" ]; then
     echo "Nothing to do here."
 elif [ "$GAMEMODE" == "adventure" ]; then
-    sed -i 's/gamemode=survival/gamemode=adventure/' /server.properties
+    sed -i 's/gamemode=survival/gamemode=adventure/' ./server.properties
 elif [ "$GAMEMODE" == "spectator" ]; then
-    sed -i 's/gamemode=survival/gamemode=spectator/' /server.properties
+    sed -i 's/gamemode=survival/gamemode=spectator/' ./server.properties
 else
 	echo "You must state one of the following gamemodes: creative, survival, adventure, or spectator"
 fi
 
 echo "==> Updating allow-flight current value is $ALLOWFLIGHT"
 if [ "$ALLOWFLIGHT" == "true" ]; then
-    sed -i 's/allow-flight=false/allow-flight=true/' /server.properties
+    sed -i 's/allow-flight=false/allow-flight=true/' ./server.properties
 elif [ "$ALLOWFLIGHT" == "false" ]; then
-    sed -i 's/allow-flight=false/allow-flight=false/' /server.properties
+    sed -i 's/allow-flight=false/allow-flight=false/' ./server.properties
 else
 	echo "Value for ALLOWFLIGHT must be true or false"
 fi
