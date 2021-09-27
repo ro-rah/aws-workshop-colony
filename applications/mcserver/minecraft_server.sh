@@ -14,13 +14,15 @@ yum install curl -y
 curl https://launcher.mojang.com/v1/objects/c5f6fb23c3876461d46ec380421e42b289789530/server.jar --output server.jar
 
 echo "initializing eula and settings.properties"
-java -jar server.jar --initSettings --nogui
+cd /opt/minecraft
+java -jar /opt/minecraft/server.jar --initSettings --nogui
 
 echo -e '#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 \n#Wed Aug 25 02:30:24 UTC 2021 \neula=true' > eula.txt
 
 
 echo "==> Updating gamemode, current value is $GAMEMODE"
+cd /opt/minecraft
 if [ "$GAMEMODE" == "creative" ]; then
     sed -i 's/gamemode=survival/gamemode=creative/' /opt/minecraft/server.properties
 elif [ "$GAMEMODE" == "survival" ]; then
