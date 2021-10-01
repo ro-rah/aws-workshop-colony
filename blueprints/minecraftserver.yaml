@@ -10,6 +10,7 @@ inputs:
   - AWS_INSTANCE_TYPE: m4.xlarge
   - ALLOWFLIGHT: true
   - GAMEMODE: creative|survival|adventure|spectator
+  - SEED: 4006
 applications:
   - mcserver:
       target: vm1
