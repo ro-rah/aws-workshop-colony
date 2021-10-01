@@ -18,6 +18,7 @@ applications:
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - ALLOWFLIGHT: $ALLOWFLIGHT
         - GAMEMODE: $GAMEMODE
+        - SEED: $SEED
 ingress:
   enabled: false
 debugging:

@@ -14,8 +14,7 @@ yum install curl -y
 curl https://launcher.mojang.com/v1/objects/c5f6fb23c3876461d46ec380421e42b289789530/server.jar --output server.jar
 
 echo "initializing eula and settings.properties"
-cd /opt/minecraft
-java -jar /opt/minecraft/server.jar --initSettings --nogui
+cd /opt/minecraft;java -jar /opt/minecraft/server.jar --initSettings --nogui
 
 echo -e '#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 \n#Wed Aug 25 02:30:24 UTC 2021 \neula=true' > eula.txt
@@ -43,3 +42,7 @@ elif [ "$ALLOWFLIGHT" == "false" ]; then
 else
 	echo "Value for ALLOWFLIGHT must be true or false"
 fi
+
+echo "==> Updating the seed value is $SEED"
+sed -i 's/level-seed=/level-seed=$SEED/' /opt/minecraft/server.properties
+

@@ -5,6 +5,7 @@ inputs:
   - AWS_INSTANCE_TYPE: m4.xlarge
   - ALLOWFLIGHT: true
   - GAMEMODE: survival
+  - SEED:
 infrastructure:
   connectivity:
     external:
