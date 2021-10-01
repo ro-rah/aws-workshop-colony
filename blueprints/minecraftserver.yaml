@@ -22,3 +22,4 @@ ingress:
   enabled: false
 debugging:
   direct_access: on
+  bastion_availability: enabled-on
