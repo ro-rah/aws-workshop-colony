@@ -13,7 +13,7 @@ infrastructure:
           port: $PORT
           path: ''
       - minecraft_admin:
-          port: 8080
+          port: 8000
           path: ''
   compute:
     spec:
