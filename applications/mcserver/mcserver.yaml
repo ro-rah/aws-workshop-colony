@@ -12,6 +12,9 @@ infrastructure:
       - minecraft_server:
           port: $PORT
           path: ''
+      - minecraft_admin:
+          port: 8080
+          path: ''
   compute:
     spec:
       azure:
