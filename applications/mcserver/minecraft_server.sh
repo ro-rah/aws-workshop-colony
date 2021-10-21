@@ -4,6 +4,18 @@ echo '=============== Staring init script for Promotions Manager UI ============
 # save all env for debugging
 printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 
+#accept updates
+sudo yum -y update
+
+#upgrade to python3
+sudo yum -y install python36
+
+#set pip to use python3
+sudo python3 -m pip install --upgrade --force pip
+
+#install flask for python api
+sudo python3 -m pip install Flask --user
+
 echo '==> Create Minecraft server Install directory'
 mkdir /opt/minecraft
 cd /opt/minecraft
