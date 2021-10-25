@@ -13,8 +13,9 @@ sudo yum -y install python36
 #set pip to use python3
 sudo python3 -m pip install --upgrade --force pip
 
-#install flask for python api
+#install dependancies for python api
 sudo python3 -m pip install Flask --user
+sudo python3 -m pip install werkzeug --user
 
 echo '==> Create Minecraft server Install directory'
 mkdir /opt/minecraft
