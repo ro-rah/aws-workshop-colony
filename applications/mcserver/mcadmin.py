@@ -27,6 +27,7 @@ def saveMCworld():
    except Exception as e:
       return str(e)
       
+#ToDo: Test this out while in a MC world
 @app.route('/stopMCworld')
 def stopMCworld():
    #Connect to screen session using subprocess
@@ -39,13 +40,25 @@ def stopMCworld():
 def form():
    return render_template('form.html')
    
-@app.route('/restoreMCworld', methods = ['POST', 'GET'])
-def restoreMCworld():
+@app.route('/uploadMCworld', methods = ['POST', 'GET'])
+def uploadMCworld():
    if request.method == 'POST':
         f = request.files['zipFile']
         f.save(secure_filename(f.filename))
         return "File saved successfully"
    return "File not saved"
-
+   
+@app.route('/restoreMCworld')
+def restoreMCworld():
+   filePath = '/tmp/minecraft_save.zip'
+   if os.path.exists(filePath):
+      stopMCworld()
+      subprocess.run('unzip /tmp/minecraft_save.zip -d /', shell=True)
+      subprocess.run('screen -dmS myserver /usr/bin/java -jar /opt/minecraft/server.jar --nogui', shell=True)
+      return 'MC Server restored!'
+   elif:
+      return 'Save file does not exist in /tmp, have you uploaded it?'
+    
+      
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port=8000, debug=True)
