@@ -53,10 +53,10 @@ def restoreMCworld():
    filePath = '/tmp/minecraft_save.zip'
    if os.path.exists(filePath):
       stopMCworld()
-      subprocess.run('unzip /tmp/minecraft_save.zip -d /', shell=True)
+      subprocess.run('unzip -o /tmp/minecraft_save.zip -d /', shell=True)
       subprocess.run('screen -dmS myserver /usr/bin/java -jar /opt/minecraft/server.jar --nogui', shell=True)
       return 'MC Server restored!'
-   elif:
+   else:
       return 'Save file does not exist in /tmp, have you uploaded it?'
     
       
