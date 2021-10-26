@@ -33,7 +33,7 @@ def stopMCworld():
    #Connect to screen session using subprocess
    # https://unix.stackexchange.com/questions/541254/python-open-screen-and-execute-inside-screen
    #Running commands in screen: https://serverfault.com/questions/104668/create-screen-and-run-command-without-attaching
-   subprocess.run('screen -dmS myserver "/stop"', shell=True)
+   subprocess.run('screen -S myserver -p 0 -X quit', shell=True)
    return 'Minecraft server has been stopped'
    
 @app.route('/form')
@@ -54,7 +54,7 @@ def restoreMCworld():
    if os.path.exists(filePath):
       stopMCworld()
       subprocess.run('unzip -o /tmp/minecraft_save.zip -d /', shell=True)
-      subprocess.run('screen -dmS myserver /usr/bin/java -jar /opt/minecraft/server.jar --nogui', shell=True)
+      subprocess.run('screen -dmS myserver /usr/bin/java -jar /opt/minecraft/server.jar --nogui', shell=True, cwd='/opt/minecraft')
       return 'MC Server restored!'
    else:
       return 'Save file does not exist in /tmp, have you uploaded it?'
