@@ -11,6 +11,7 @@ inputs:
   - ALLOWFLIGHT: true
   - GAMEMODE: creative|survival|adventure|spectator
   - SEED: 4006
+  - CONSOLEPORT: 8000
 applications:
   - mcserver:
       target: vm1
@@ -20,6 +21,12 @@ applications:
         - ALLOWFLIGHT: $ALLOWFLIGHT
         - GAMEMODE: $GAMEMODE
         - SEED: $SEED
+  - mcadminconsole:
+       target: vm1
+       input_values:
+         - CONSOLEPORT: $CONSOLEPORT
+artifacts: 
+  - mcadminconsole: 'artifacts/minecraft/mcadmin.zip' 
 ingress:
   enabled: false
 debugging:

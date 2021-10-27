@@ -1,16 +1,9 @@
 kind: application
-inputs:
-  - PORT: 25565
-  - AZURE_VM_SIZE: Basic_A1
-  - AWS_INSTANCE_TYPE: m4.xlarge
-  - ALLOWFLIGHT: true
-  - GAMEMODE: survival
-  - SEED:
 infrastructure:
   connectivity:
     external:
-      - minecraft_server:
-          port: $PORT
+      - mcamdinconsole:
+          port: $CONSOLEPORT
           path: ''
   compute:
     spec:
@@ -20,12 +13,12 @@ infrastructure:
         instance_type: $AWS_INSTANCE_TYPE
 configuration:
   start:
-    script: minecraft_server-command.sh
+    script: mcamdinconsole_start.sh
   initialization:
-    script: minecraft_server.sh
+    script: mcamdinconsole_init.sh
   healthcheck:
     timeout: 200
-    wait_for_ports: $PORT
+    wait_for_ports: $CONSOLEPORT
 source:
   image:
     azure_image:
