@@ -1,4 +1,6 @@
 kind: application
+inputs:
+  - PORT: $CONSOLEPORT
 infrastructure:
   connectivity:
     external:
