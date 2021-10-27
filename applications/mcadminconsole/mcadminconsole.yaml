@@ -1,6 +1,6 @@
 kind: application
 inputs:
-  - PORT: $CONSOLEPORT
+  - CONSOLEPORT: $CONSOLEPORT
 infrastructure:
   connectivity:
     external:
