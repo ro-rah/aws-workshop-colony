@@ -25,6 +25,7 @@ applications:
        target: vm1
        input_values:
          - CONSOLEPORT: $CONSOLEPORT
+         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
 artifacts: 
   - mcadminconsole: 'artifacts/minecraft/mcadmin.zip' 
 ingress:

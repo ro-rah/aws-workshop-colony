@@ -1,6 +1,8 @@
 kind: application
 inputs:
-  - CONSOLEPORT: $CONSOLEPORT
+  - CONSOLEPORT: 8000
+  - AZURE_VM_SIZE: Basic_A1
+  - AWS_INSTANCE_TYPE: m4.xlarge
 infrastructure:
   connectivity:
     external:
