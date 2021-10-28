@@ -16,6 +16,13 @@ sudo yum -y install java-1.8.0-openjdk-devel
 #install wget
 sudo yum -y install wget
 
+#For sealight build
+#install git
+sudo yum -y install git
+sudo yum -y install jq
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+sudo yum install -y apache-maven
 
 #enable amazon epel and install demonize
 sudo yum -y install epel-release
