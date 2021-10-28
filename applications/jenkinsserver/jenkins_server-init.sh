@@ -11,14 +11,19 @@ printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 sudo yum -y update
 
 #install open-jdk
-sudo yum -y install java-11-openjdk-devel
+sudo yum -y install java-1.8.0-openjdk-devel
 
 #install wget
 sudo yum -y install wget
 
-#install Jenkins repo
-sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
-sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 
+#enable amazon epel and install demonize
+sudo yum -y install epel-release
+sudo yum-config-manager --enable epel
+sudo yum install daemonize -y
+
+#install jenkins repo, key and software
 #LTS as of this writing 2.303.2
-sudo yum install -y jenkins-2.303.2
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum -y install jenkins-2.303.2

@@ -6,7 +6,7 @@ metadata:
 clouds:
   - AWS: us-east-1
 inputs:
-  - PORT: 25565
+  - PORT: 8080
   - AWS_INSTANCE_TYPE: m4.xlarge
 applications:
   - jenkinsserver:
