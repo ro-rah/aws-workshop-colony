@@ -1,0 +1,24 @@
+#!/bin/bash
+echo '=============== Staring init script for Jenkins Server ==============='
+# References:
+# https://www.redhat.com/sysadmin/install-jenkins-rhel8
+# https://scriptcrunch.com/jenkins-installtion-guide/
+
+# save all env for debugging
+printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
+
+#accept updates
+sudo yum -y update
+
+#install open-jdk
+sudo yum -y install java-11-openjdk-devel
+
+#install wget
+sudo yum -y install wget
+
+#install Jenkins repo
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
+#LTS as of this writing 2.303.2
+sudo yum install -y jenkins-2.303.2

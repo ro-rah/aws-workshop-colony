@@ -1,0 +1,23 @@
+spec_version: 1
+kind: blueprint
+metadata:
+  description: |
+    Basic Jenkins server on an *nix system
+clouds:
+  - AWS: us-east-1
+inputs:
+  - PORT: 25565
+  - AWS_INSTANCE_TYPE: m4.xlarge
+applications:
+  - jenkinsserver:
+      target: vm1
+      input_values:
+        - PORT: $PORT
+        - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
+#artifacts: 
+#  - jenkinsserver: 'artifacts/minecraft/mcadmin.zip' 
+ingress:
+  enabled: false
+debugging:
+  direct_access: on
+  bastion_availability: enabled-on
