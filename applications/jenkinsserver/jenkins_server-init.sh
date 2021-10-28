@@ -26,4 +26,4 @@ sudo yum install daemonize -y
 #LTS as of this writing 2.303.2
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-sudo yum -y install jenkins-2.303.2
+sudo yum -y install jenkins
