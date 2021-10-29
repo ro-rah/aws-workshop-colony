@@ -12,6 +12,7 @@ sudo yum -y update
 
 #install open-jdk
 sudo yum -y install java-1.8.0-openjdk-devel
+sudo yum -y remove java-1.7.0-openjdk.x86_64
 
 #install wget
 sudo yum -y install wget
@@ -33,4 +34,4 @@ sudo yum install daemonize -y
 #LTS as of this writing 2.303.2
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-#sudo yum -y install jenkins
+sudo yum -y install jenkins
