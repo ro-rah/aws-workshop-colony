@@ -6,8 +6,8 @@ pipeline {
                 sh 'echo "Starting the script"'
                 cleanWs()
                 git branch: 'master', url: 'https://github.com/deepak2717/HelloWorldMaven.git'
-                sh 'param1 = "clean compile"'
                 sh '''
+                    param1="clean compile"
                     echo '{
                      "token": "MyToken",
                      "createBuildSessionId": true,
@@ -21,7 +21,7 @@ pipeline {
                      "recursive": true,
                      "includeResources": true,
                      "testStage": "${SUREFIRE_TEST_STAGE}",
-                     "failsafeArgLine"= "deploy",
+                     "failsafeArgLine": "deploy",
                      "labId": "'${param1}'",
                      "executionType": "full",
                      "logEnabled": false,
@@ -49,7 +49,7 @@ pipeline {
         stage('Test'){
             steps {
                 sh '''
-                    provider=$(cat slmaven.json |jq -r '.sealightsJvmParams | .sl.scm.provider')
+                    provider=$(cat slmaven.json |jq -r '.sealightsJvmParams | .["sl.scm.provider"]')
                     mvn ${provider}
                 '''
             }
