@@ -48,7 +48,7 @@ def renderLog():
         filecontents = f.read()
         f.close()
         print(filecontents)
-        return filecontents
+        return Response(filecontents, mimetype='text/plain')
    return f
    
 @app.route('/restoreMCworld')
