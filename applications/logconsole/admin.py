@@ -43,10 +43,12 @@ def form():
 @app.route('/renderLog', methods = ['POST', 'GET'])
 def renderLog():
    if request.method == 'POST':
-        f = open(['logpath'], 'r')
-        f.read()
-        #f.close()
-        return "File saved successfully"
+        print(request.form['logpath'])
+        f = open(request.form['logpath'], 'r')
+        filecontents = f.read()
+        f.close()
+        print(filecontents)
+        return filecontents
    return f
    
 @app.route('/restoreMCworld')
