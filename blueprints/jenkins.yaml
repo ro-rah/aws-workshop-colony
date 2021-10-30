@@ -21,7 +21,7 @@ applications:
          - CONSOLEPORT: $CONSOLEPORT
          - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
 artifacts: 
-  - logconsole: 'artifacts/minecraft/mcadmin.zip' 
+  - logconsole: 'artifacts/logconsole/admin.zip' 
 #artifacts: 
 #  - jenkinsserver: 'artifacts/minecraft/mcadmin.zip' 
 ingress:
