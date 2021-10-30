@@ -8,6 +8,7 @@ clouds:
 inputs:
   - PORT: 8080
   - AWS_INSTANCE_TYPE: m4.xlarge
+  - CONSOLEPORT: 8000
 applications:
   - jenkinsserver:
       target: vm1
