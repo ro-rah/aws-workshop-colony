@@ -31,8 +31,6 @@ sudo yum -y install wget
 #LTS as of this writing 2.303.2
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-sudo yum -y install jenkins
-
 
 #For sealight build
 #install git
@@ -46,4 +44,4 @@ sudo yum install -y apache-maven
 sudo yum -y install epel-release
 sudo yum-config-manager --enable epel
 sudo yum install daemonize -y
-
+sudo yum -y install jenkins
