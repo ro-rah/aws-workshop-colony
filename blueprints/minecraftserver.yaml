@@ -9,7 +9,7 @@ inputs:
   - PORT: 25565
   - AWS_INSTANCE_TYPE: m4.xlarge
   - ALLOWFLIGHT: true
-  - GAMEMODE: creative|survival|adventure|spectator
+  - GAMEMODE: creative|survival|adventure
   - SEED: 4006
   - CONSOLEPORT: 8000
 applications:
