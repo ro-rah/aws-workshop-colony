@@ -15,13 +15,13 @@ applications:
       input_values:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
-  - logconsole:
-       target: vm1
-       input_values:
-         - CONSOLEPORT: $CONSOLEPORT
-         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
-artifacts: 
-  - logconsole: 'artifacts/logconsole/admin.zip' 
+#  - logconsole:
+#       target: vm1
+#       input_values:
+#         - CONSOLEPORT: $CONSOLEPORT
+#         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
+#artifacts: 
+ # - logconsole: 'artifacts/logconsole/admin.zip' 
 #artifacts: 
 #  - jenkinsserver: 'artifacts/minecraft/mcadmin.zip' 
 ingress:
