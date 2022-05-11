@@ -12,6 +12,7 @@ sudo yum -y update
 
 #upgrade to python3
 sudo yum -y install python36
+sudo yum -y install epel-release
 
 #set pip to use python3
 sudo python3 -m pip install --upgrade --force pip
@@ -20,12 +21,12 @@ sudo python3 -m pip install --upgrade --force pip
 sudo python3 -m pip install Flask --user
 sudo python3 -m pip install werkzeug --user
 
+#install mariadb
+#https://computingforgeeks.com/how-to-install-mariadb-on-amazon-linux-2/
+sudo curl -LsS -O https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+sudo bash mariadb_repo_setup --os-type=rhel --os-version=7 --mariadb-server-version=10.6
+sudo yum -y install MariaDB-server MariaDB-client
 
-#install open-jdk
-sudo yum -y install java-1.8.0-openjdk-devel
-
-#install wget
-sudo yum -y install wget
 
 #install jenkins repo, key and software
 #LTS as of this writing 2.303.2
@@ -47,8 +48,9 @@ echo 'export M2=$M2_HOME/bin' |  sudo tee -a /etc/profile.d/maven.sh
 echo 'export PATH=$M2:$PATH' |  sudo tee -a /etc/profile.d/maven.sh
 
 
+
 #enable amazon epel and install demonize
-sudo yum -y install epel-release
 sudo yum-config-manager --enable epel
 sudo yum install daemonize -y
 sudo yum -y install jenkins
+echo "export JAVA_HOME='-Djenkins.install.runSetupWizard=false'" |  sudo tee -a /etc/profile.d/jenkins.sh

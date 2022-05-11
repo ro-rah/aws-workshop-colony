@@ -32,9 +32,9 @@ source:
       - name: ubuntu
         tag: 16.04
     ami:
-      - id: ami-0e2a5ed4d04d31930
+      - id: ami-02358d9f5245918a3
         region: us-east-1
-        username: ec2-user
+        username: centos
   os_type: linux
 spec_version: 1
 debugging:
