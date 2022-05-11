@@ -53,4 +53,4 @@ echo 'export PATH=$M2:$PATH' |  sudo tee -a /etc/profile.d/maven.sh
 sudo yum-config-manager --enable epel
 sudo yum install daemonize -y
 sudo yum -y install jenkins
-echo "export JAVA_HOME='-Djenkins.install.runSetupWizard=false'" |  sudo tee -a /etc/profile.d/jenkins.sh
+sudo sed -i 's/JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true"/JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"/' /etc/sysconfig/jenkins
