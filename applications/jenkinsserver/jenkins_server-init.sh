@@ -36,9 +36,16 @@ sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 #install git
 sudo yum -y install git
 sudo yum -y install jq
-sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
-sudo yum install -y apache-maven
+
+sudo mkdir /opt/maven
+cd /opt/maven
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
+sudo tar xvf apache-maven-3.8.5-bin.tar.gz
+sudo mv apache-maven-3.8.5  /usr/local/apache-maven
+echo 'export M2_HOME=/usr/local/apache-maven' |  sudo tee /etc/profile.d/maven.sh
+echo 'export M2=$M2_HOME/bin' |  sudo tee -a /etc/profile.d/maven.sh
+echo 'export PATH=$M2:$PATH' |  sudo tee -a /etc/profile.d/maven.sh
+
 
 #enable amazon epel and install demonize
 sudo yum -y install epel-release
