@@ -61,4 +61,4 @@ echo 'Description=My Company Jenkins Controller' | sudo tee -a /etc/systemd/syst
 echo ' ' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
 echo '[Service]' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
 echo '# Add JVM configuration options' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
-echo 'Environment="JAVA_OPTS=-Djava.awt.headless=true -XX:+UseStringDeduplication"'| sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
+echo 'Environment="JAVA_OPTS=-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"'| sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
