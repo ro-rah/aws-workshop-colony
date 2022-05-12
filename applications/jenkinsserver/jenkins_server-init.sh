@@ -56,4 +56,9 @@ echo 'export PATH=$M2:$PATH' |  sudo tee -a /etc/profile.d/maven.sh
 sudo yum-config-manager --enable epel
 sudo yum install daemonize -y
 sudo yum -y install jenkins
-sudo sed -i 's/JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true"/JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"/' /etc/sysconfig/jenkins
+echo '[Unit]' |  sudo tee /etc/systemd/system/jenkins.service.d/override.conf
+echo 'Description=My Company Jenkins Controller' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
+echo ' ' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
+echo '[Service]' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
+echo '# Add JVM configuration options' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
+echo 'Environment="JAVA_OPTS=-Djava.awt.headless=true -XX:+UseStringDeduplication"'| sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
