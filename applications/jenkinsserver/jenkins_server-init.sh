@@ -56,6 +56,7 @@ echo 'export PATH=$M2:$PATH' |  sudo tee -a /etc/profile.d/maven.sh
 sudo yum-config-manager --enable epel
 sudo yum install daemonize -y
 sudo yum -y install jenkins
+sudo mkdir /etc/systemd/system/jenkins.service.d/
 echo '[Unit]' |  sudo tee /etc/systemd/system/jenkins.service.d/override.conf
 echo 'Description=My Company Jenkins Controller' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
 echo ' ' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
