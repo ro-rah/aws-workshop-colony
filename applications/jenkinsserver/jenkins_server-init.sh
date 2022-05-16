@@ -13,6 +13,7 @@ sudo yum -y update
 #upgrade to python3
 sudo yum -y install python36
 sudo yum -y install epel-release
+sudo yum -y install wget
 
 #set pip to use python3
 sudo python3 -m pip install --upgrade --force pip
