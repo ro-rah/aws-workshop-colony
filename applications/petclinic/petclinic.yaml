@@ -1,4 +1,8 @@
 kind: application
+inputs:
+  - PORT: 8080
+  - AZURE_VM_SIZE: Basic_A1
+  - AWS_INSTANCE_TYPE: m4.xlarge
 infrastructure:
   connectivity:
     external:
