@@ -5,26 +5,26 @@ echo '=============== Staring init script for PetClinic Server ==============='
 printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 
 #accept updates
-sudo yum -y update
+#sudo yum -y update
 
 #upgrade to python3
-sudo yum -y install python36
-sudo yum -y install epel-release
-sudo yum -y install wget
+#sudo yum -y install python36
+#sudo yum -y install epel-release
+#sudo yum -y install wget
 
 #set pip to use python3
-sudo python3 -m pip install --upgrade --force pip
+#sudo python3 -m pip install --upgrade --force pip
 
 #install dependancies for python api
-sudo python3 -m pip install Flask --user
-sudo python3 -m pip install werkzeug --user
+#sudo python3 -m pip install Flask --user
+#sudo python3 -m pip install werkzeug --user
 
 #install java
 sudo yum -y install java-11-openjdk-devel
 
 
 #install git
-sudo yum -y install git
+#sudo yum -y install git
 
 #Install JFrog CLI
 sudo echo "[jfrog-cli]" > jfrog-cli.repo;
