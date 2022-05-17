@@ -43,4 +43,4 @@ jf config import eyJ2ZXJzaW9uIjoyLCJ1cmwiOiJodHRwczovL3JvbmFrLmpmcm9nLmlvLyIsImF
 jf rt dl --flat default-generic-local/com/petclinic/spring-petclinic-2.6.0-SNAPSHOT.jar
 
 #start PetClinic
-sudo java -jar spring-petclinic-2.6.0-SNAPSHOT.jar
+sudo nohup java -jar spring-petclinic-2.6.0-SNAPSHOT.jar &
