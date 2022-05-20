@@ -22,8 +22,8 @@ applications:
 #         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
 #artifacts: 
  # - logconsole: 'artifacts/logconsole/admin.zip' 
-#artifacts: 
-#  - jenkinsserver: 'artifacts/minecraft/mcadmin.zip' 
+artifacts: 
+  - jenkinsserver: 'jenkins/jenkins.tar.gz' 
 ingress:
   enabled: false
 debugging:
