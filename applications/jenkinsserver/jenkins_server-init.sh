@@ -52,9 +52,7 @@ echo 'export M2=$M2_HOME/bin' |  sudo tee -a /etc/profile.d/maven.sh
 echo 'export PATH=$M2:$PATH' |  sudo tee -a /etc/profile.d/maven.sh
 
 echo '==> Extract artifact to /tmp/'
-sudo tar xvzf $ARTIFACTS_PATH/jenkins/jenkins.tar.gz --directory  /tmp
-sudo $ARTIFACTS_PATH/jenkins/jenkins.tar.gz /tmp
-
+sudo tar xvzf $ARTIFACTS_PATH/jenkins.tar.gz --directory  /var
 
 #enable amazon epel and install demonize
 sudo yum-config-manager --enable epel
