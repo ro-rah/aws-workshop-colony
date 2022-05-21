@@ -23,7 +23,7 @@ sudo python3 -m pip install Flask --user
 sudo python3 -m pip install werkzeug --user
 
 #install java
-sudo yum -y install java-1.8.0-openjdk-devel
+sudo yum -y install java-11-openjdk-devel
 
 #install mariadb
 #https://computingforgeeks.com/how-to-install-mariadb-on-amazon-linux-2/
