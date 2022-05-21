@@ -53,12 +53,12 @@ echo 'export PATH=$M2:$PATH' |  sudo tee -a /etc/profile.d/maven.sh
 
 echo '==> Extract artifact to /tmp/'
 sudo tar xvzf $ARTIFACTS_PATH/jenkins.tar.gz --directory  /
-sudo chown jenkins:jenkins /var/lib/jenkins
 
 #enable amazon epel and install demonize
 sudo yum-config-manager --enable epel
 sudo yum install daemonize -y
 sudo yum -y install jenkins
+sudo chown jenkins:jenkins /var/lib/jenkins
 sudo mkdir /etc/systemd/system/jenkins.service.d/
 echo '[Unit]' |  sudo tee /etc/systemd/system/jenkins.service.d/override.conf
 echo 'Description=My Company Jenkins Controller' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
