@@ -25,13 +25,6 @@ sudo python3 -m pip install werkzeug --user
 #install java
 sudo yum -y install java-11-openjdk-devel
 
-#install mariadb
-#https://computingforgeeks.com/how-to-install-mariadb-on-amazon-linux-2/
-sudo curl -LsS -O https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
-sudo bash mariadb_repo_setup --os-type=rhel --os-version=7 --mariadb-server-version=10.6
-sudo yum -y install MariaDB-server MariaDB-client
-
-
 #install jenkins repo, key and software
 #LTS as of this writing 2.303.2
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
@@ -58,7 +51,7 @@ sudo tar xvzf $ARTIFACTS_PATH/jenkins.tar.gz --directory  /
 sudo yum-config-manager --enable epel
 sudo yum install daemonize -y
 sudo yum -y install jenkins
-sudo chown jenkins:jenkins /var/lib/jenkins
+sudo chown -R jenkins:jenkins /var/lib/jenkins
 sudo mkdir /etc/systemd/system/jenkins.service.d/
 echo '[Unit]' |  sudo tee /etc/systemd/system/jenkins.service.d/override.conf
 echo 'Description=My Company Jenkins Controller' | sudo tee -a /etc/systemd/system/jenkins.service.d/override.conf
