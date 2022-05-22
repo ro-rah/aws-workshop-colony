@@ -21,12 +21,10 @@ sudo mv jfrog-cli.repo /etc/yum.repos.d/;
 sudo yum install -y jfrog-cli-v2-jf;
 
 #import creds
-echo $JFROGTOKEN
 jf config import $JFROGTOKEN
 
 
 #download artifact
-echo $PETCLINICVERSION
 jf rt dl --flat default-generic-local/com/petclinic/spring-petclinic-$PETCLINICVERSION.jar
 
 #start PetClinic
