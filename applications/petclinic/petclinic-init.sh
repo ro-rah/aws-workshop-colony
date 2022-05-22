@@ -21,8 +21,7 @@ printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 ##sudo yum install -y jfrog-cli-v2-jf;
 
 #import creds
-echo "value for jfrog token: $JFROGTOKEN"
-echo $JFROGTOKEN
+echo "value for jfrog token: ${torque.parameters.jfrogtoken}"
 ##jf config import $JFROGTOKEN
 
 

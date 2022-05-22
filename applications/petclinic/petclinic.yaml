@@ -4,7 +4,7 @@ inputs:
   - AZURE_VM_SIZE: Basic_A1
   - AWS_INSTANCE_TYPE: m4.xlarge
   - PETCLINICVERSION: 2.6.0-SNAPSHOT
-  - JFROGTOKEN : ${torque.parameters.jfrogtoken}
+ # - JFROGTOKEN : ${torque.parameters.jfrogtoken}
 infrastructure:
   connectivity:
     external:
