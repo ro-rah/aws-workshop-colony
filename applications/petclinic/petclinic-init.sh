@@ -40,7 +40,8 @@ jf config import $torque.parameters.jfrogtoken
 
 
 #download artifact
-jf rt dl --flat default-generic-local/com/petclinic/spring-petclinic-2.6.0-SNAPSHOT.jar
+echo $PETCLINICVERSION
+jf rt dl --flat default-generic-local/com/petclinic/spring-petclinic-$PETCLINICVERSION.jar
 
 #start PetClinic
 sudo nohup java -jar spring-petclinic-2.6.0-SNAPSHOT.jar &
