@@ -36,6 +36,7 @@ sudo mv jfrog-cli.repo /etc/yum.repos.d/;
 sudo yum install -y jfrog-cli-v2-jf;
 
 #import creds
+echo $torque.parameters.jfrogtoken
 jf config import $torque.parameters.jfrogtoken
 
 
