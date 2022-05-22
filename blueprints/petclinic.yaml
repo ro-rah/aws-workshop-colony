@@ -16,6 +16,7 @@ applications:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - PETCLINICVERSION: $PETCLINICVERSION
+        - JFROGTOKEN : $torque.parameters.jfrogtoken
 #  - logconsole:
 #       target: vm1
 #       input_values:

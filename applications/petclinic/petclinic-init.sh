@@ -28,7 +28,7 @@ echo "value for jfrog token: $jfrogtoken"
 echo ${torque.parameters.jfrogtoken}
 echo ${jfrogtoken}
 echo $torque.parameters.jfrogtoken
-echo $jfrogtoken"
+echo $jfrogtoken
 ##jf config import $JFROGTOKEN
 
 
