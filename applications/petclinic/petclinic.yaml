@@ -23,7 +23,7 @@ configuration:
   initialization:
     script: petclinic-init.sh
   healthcheck:
-    timeout: 2
+    timeout: 50
     wait_for_ports: $PORT
 source:
   image:
