@@ -22,9 +22,9 @@ configuration:
     script: petclinic-start.sh
   initialization:
     script: petclinic-init.sh
-  #healthcheck:
-    #timeout: 200
-    #wait_for_ports: $PORT
+  healthcheck:
+    timeout: 2
+    wait_for_ports: $PORT
 source:
   image:
     azure_image:
