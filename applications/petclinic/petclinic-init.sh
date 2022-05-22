@@ -22,6 +22,13 @@ printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 
 #import creds
 echo "value for jfrog token: ${torque.parameters.jfrogtoken}"
+echo "value for jfrog token: ${jfrogtoken}"
+echo "value for jfrog token: $torque.parameters.jfrogtoken"
+echo "value for jfrog token: $jfrogtoken"
+echo ${torque.parameters.jfrogtoken}
+echo ${jfrogtoken}
+echo $torque.parameters.jfrogtoken
+echo $jfrogtoken"
 ##jf config import $JFROGTOKEN
 
 
