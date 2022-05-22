@@ -3,6 +3,7 @@ inputs:
   - PORT: 8080
   - AZURE_VM_SIZE: Basic_A1
   - AWS_INSTANCE_TYPE: m4.xlarge
+  - PETCLINICVERSION: 2.6.0-SNAPSHOT
 infrastructure:
   connectivity:
     external:
