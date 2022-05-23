@@ -8,9 +8,6 @@ printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 sudo yum -y install java-11-openjdk-devel
 
 
-#install git
-sudo yum -y install git
-
 #Install JFrog CLI
 sudo echo "[jfrog-cli]" > jfrog-cli.repo;
 sudo echo "name=jfrog-cli" >> jfrog-cli.repo;
@@ -28,4 +25,4 @@ jf config import $JFROGTOKEN
 jf rt dl --flat default-generic-local/com/petclinic/spring-petclinic-$PETCLINICVERSION.jar
 
 #start PetClinic
-sudo nohup java -jar spring-petclinic-2.6.0-SNAPSHOT.jar &
+sudo nohup java -jar spring-petclinic-*.jar &

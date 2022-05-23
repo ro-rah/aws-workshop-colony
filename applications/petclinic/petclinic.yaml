@@ -2,7 +2,7 @@ kind: application
 inputs:
   - PORT: 8080
   - AZURE_VM_SIZE: Basic_A1
-  - AWS_INSTANCE_TYPE: m4.xlarge
+  - AWS_INSTANCE_TYPE: t2.micro
   - PETCLINICVERSION: 2.6.0-SNAPSHOT
   - JFROGTOKEN: storeAtokenInTorqueParameterStore
 infrastructure:
@@ -34,7 +34,7 @@ source:
       - name: ubuntu
         tag: 16.04
     ami:
-      - id: ami-02358d9f5245918a3
+      - id: ami-0639df99964be5d4b
         region: us-east-1
         username: centos
   os_type: linux
