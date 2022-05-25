@@ -4,7 +4,7 @@ metadata:
   description: |
     Basic CentOS 7 system
 clouds:
-  - AWS-Dev: us-west-1
+  - AWS-Dev: us-east-1
 inputs:
   - PORT: 8080
   - AWS_INSTANCE_TYPE: t2.micro
