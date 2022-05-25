@@ -7,7 +7,7 @@ clouds:
   - AWS-Dev: us-east-1
 inputs:
   - PORT: 8080
-  - AWS_INSTANCE_TYPE: m4.xlarge
+  - AWS_INSTANCE_TYPE: t2.micro
   - PETCLINICVERSION: 2.6.0-SNAPSHOT
 applications:
   - petclinic:
