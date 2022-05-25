@@ -25,4 +25,4 @@ jf config import $JFROGTOKEN
 jf rt dl --flat default-generic-local/com/petclinic/spring-petclinic-$PETCLINICVERSION.jar
 
 #start PetClinic
-sudo nohup java -jar spring-petclinic-*.jar &
+sudo nohup java -jar -Dserver.port=$PORT spring-petclinic-*.jar &
